@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react"; //Removed the useEffect import since it's not needed here and showing warnings in the console.
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import axios from 'axios';
+//Removed the axios import since it's not needed here and throwing warnings in console.
 
 import PlantList from "./components/PlantList";
 import ShoppingCart from "./components/ShoppingCart";
