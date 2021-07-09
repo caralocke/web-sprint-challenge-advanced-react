@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; //Imported useState and useEffect
 import axios from "axios";
 
 export default class PlantList extends Component {
   // add state with a property called "plants" - initialize as an empty array
+   state = { //add state
+        plants: [] //with a property called 'plants' that initializes as an empty array
+      }
 
   // when the component mounts:
   //   - fetch data from the server endpoint - http://localhost:3333/plants
@@ -11,7 +14,11 @@ export default class PlantList extends Component {
   componentDidMount() {
     axios.get('http://localhost:3333/plants')
       .then(res => {
-        
+        console.log('PlantsList res.data:', res.data) //See what the response is giving me
+        this.setState({
+          plants: res.data //Set the state of plants with the response.
+        })
+        console.log('PlantsList this.state.plants:', this.state.plants) //Make sure the data is set to 'this.state.plants'
       });
   }
 
